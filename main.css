@@ -1,0 +1,51 @@
+html, body, h1 {
+    margin: 0;
+    padding: 0;
+}
+
+
+nav {
+    display: grid;
+    height: 5em;
+    text-align: center;
+    background-color: grey;
+}
+
+h1 {
+    align-self: center; 
+}
+section#intro h3 {
+    text-align: center;
+    padding-right: 1em ;
+    padding-left: 1em ;
+}
+section#intro {
+    display: grid;
+    justify-items: center;
+}
+section#choices {
+    display: grid;
+    justify-content: center;
+    height: 45vh;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    align-content: center;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+section#choices div {
+    display: grid;
+    justify-content: center;
+}
+section#choices div img {
+    width:100px;
+    align-self: center;
+    
+}
+
+section#choices div {
+    background-color: yellow;
+    text-align: center; 
+}
