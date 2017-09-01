@@ -4,13 +4,26 @@ html, body, h1 {
 }
 
 
-nav {
+nav#indexNav {
     display: grid;
     height: 5em;
     text-align: center;
     background-color: grey;
 }
-
+nav.navigation {
+    display: grid;
+    position: relative;
+    height: 5em;
+    text-align: center;
+    background-color: grey;
+}
+nav.navigation img {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
 h1 {
     align-self: center; 
 }
@@ -42,7 +55,7 @@ section#choices div {
 section#choices div img {
     width:100px;
     align-self: center;
-    
+
 }
 
 section#choices div {
