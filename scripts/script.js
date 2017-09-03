@@ -171,6 +171,6 @@ function newOptions(){
         theWheel.segments[9].text = 'TEST 9';
         theWheel.segments[10].text = 'TEST 10'; 
     }
-    theWheel.draw();               // Call draw to render changes to the wheel.
+    theWheel.draw();               // Call draw to render changes to the wheel..
 }
 
