@@ -1,24 +1,72 @@
-/*
-Description:
-    Contains all the styles for the winning wheel page.
-    
-Verison History:
-    2012-01-28, Douglas McKechie
-    - Created based off earlier version.
-    
-    2015-09-26, Douglas McKechie
-    - Minor updates for the 2.0 winwheel example.
-*/
-
-body
-{
-    font-family: arial;
+html, body, h1 {
+    margin: 0;
+    padding: 0;
 }
 
-/* Sets the background image for the wheel */
+
+nav#indexNav {
+    display: grid;
+    height: 5em;
+    text-align: center;
+    background-color: grey;
+}
+nav.navigation {
+    display: grid;
+    position: relative;
+    height: 5em;
+    text-align: center;
+    background-color: grey;
+}
+nav.navigation img {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+h1 {
+    align-self: center; 
+}
+section#intro h3 {
+    text-align: center;
+    padding-right: 1em ;
+    padding-left: 1em ;
+}
+section#intro {
+    display: grid;
+    justify-items: center;
+}
+section#choices {
+    display: grid;
+    justify-content: center;
+    height: 45vh;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    align-content: center;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+section#choices div {
+    display: grid;
+    justify-content: center;
+}
+section#choices div img {
+    width:100px;
+    align-self: center;
+
+}
+
+section#choices div {
+    background-color: yellow;
+    text-align: center; 
+}
+
+/*  Spinner wheel */
 td.the_wheel
 {
-    background-image: url(./wheel_back.png);
+    
     background-position: center;
     background-repeat: none;
 }
@@ -67,13 +115,11 @@ td.pw3
 {
     background-color: #ef6f6f;
 }
-
 /* Style applied to the spin button once a power has been selected */
 .clickable
 {
     cursor: pointer;
 }
-
 /* Other misc styles */
 .margin_bottom
 {
