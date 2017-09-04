@@ -1,63 +1,80 @@
-html, body, h1 {
+/*
+Description:
+    Contains all the styles for the winning wheel page.
+    
+Verison History:
+    2012-01-28, Douglas McKechie
+    - Created based off earlier version.
+    
+    2015-09-26, Douglas McKechie
+    - Minor updates for the 2.0 winwheel example.
+*/
+
+body
+{
+    font-family: arial;
+}
+
+/* Sets the background image for the wheel */
+td.the_wheel
+{
+    background-image: url(./wheel_back.png);
+    background-position: center;
+    background-repeat: none;
+}
+
+/* Do some css reset on selected elements */
+h1, p
+{
     margin: 0;
-    padding: 0;
 }
 
-
-nav#indexNav {
-    display: grid;
-    height: 5em;
-    text-align: center;
-    background-color: grey;
-}
-nav.navigation {
-    display: grid;
-    position: relative;
-    height: 5em;
-    text-align: center;
-    background-color: grey;
-}
-nav.navigation img {
-    position: absolute;
-    margin: auto;
-    top: 0;
-    left: 0;
-    bottom: 0;
-}
-h1 {
-    align-self: center; 
-}
-section#intro h3 {
-    text-align: center;
-    padding-right: 1em ;
-    padding-left: 1em ;
-}
-section#intro {
-    display: grid;
-    justify-items: center;
-}
-section#choices {
-    display: grid;
-    justify-content: center;
-    height: 45vh;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
-    align-content: center;
-    margin-left: 1em;
-    margin-right: 1em;
-}
-section#choices div {
-    display: grid;
-    justify-content: center;
-}
-section#choices div img {
-    width:100px;
-    align-self: center;
-
+div.power_controls
+{
+    margin-right:70px;
 }
 
+div.html5_logo
+{
+    margin-left:70px;
+}
+
+/* Styles for the power selection controls */
+table.power
+{
+    background-color: #cccccc;
+    cursor: pointer;
+    border:1px solid #333333;
+}
+
+table.power th
+{
+    background-color: white;
+    cursor: default;
+}
+
+td.pw1
+{
+    background-color: #6fe8f0;
+}
+
+td.pw2
+{
+    background-color: #86ef6f;
+}
+
+td.pw3
+{
+    background-color: #ef6f6f;
+}
+
+/* Style applied to the spin button once a power has been selected */
+.clickable
+{
+    cursor: pointer;
+}
+
+<<<<<<< HEAD
 section#choices div {
     background-color: yellow;
     text-align: center; 
@@ -120,6 +137,8 @@ td.pw3
 {
     cursor: pointer;
 }
+=======
+>>>>>>> wheel_js
 /* Other misc styles */
 .margin_bottom
 {
