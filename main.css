@@ -25,7 +25,7 @@ nav.navigation img {
     bottom: 0;
 }
 h1 {
-    align-self: center; 
+    align-self: center;
 }
 section#intro h3 {
     text-align: center;
@@ -60,13 +60,13 @@ section#choices div img {
 
 section#choices div {
     background-color: yellow;
-    text-align: center; 
+    text-align: center;
 }
 
 /*  Spinner wheel */
 td.the_wheel
 {
-    
+
     background-position: center;
     background-repeat: none;
 }
@@ -77,49 +77,51 @@ h1, p
     margin: 0;
 }
 
-div.power_controls
-{
-    margin-right:70px;
-}
 
 div.html5_logo
 {
     margin-left:70px;
 }
 
-/* Styles for the power selection controls */
-table.power
-{
-    background-color: #cccccc;
-    cursor: pointer;
-    border:1px solid #333333;
+/* Style applied to the spin button */
+.spin {
+  padding: 2% 4%;
+  font-size: 24px;
+  text-align: center;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
 }
 
-table.power th
-{
-    background-color: white;
-    cursor: default;
+.spin:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 
-td.pw1
-{
-    background-color: #6fe8f0;
+/* Style applied to the options button */
+
+.newOptions {
+  padding: 2% 4%;
+  font-size: 20px;
+  text-align: center;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
 }
 
-td.pw2
-{
-    background-color: #86ef6f;
+.newOptions:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 
-td.pw3
-{
-    background-color: #ef6f6f;
-}
-/* Style applied to the spin button once a power has been selected */
-.clickable
-{
-    cursor: pointer;
-}
 /* Other misc styles */
 .margin_bottom
 {
