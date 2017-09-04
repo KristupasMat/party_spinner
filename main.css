@@ -80,20 +80,20 @@ h1, p
 
 
 /* Style applied to the spin button once a power has been selected */
-.clickable
-{
+.clickable{
     cursor: pointer;
 }
 /* Other misc styles */
-.margin_bottom
-{
+.margin_bottom{
     margin-bottom: 5px;
 }
-
-/* Canvas size */
-
-
-
+div.wheelContent {
+   margin-top: 10vh; 
+}
+div.wheelPosition {  
+    position: relative;
+    z-index: 1;
+}
 /* The pop up box */
 div#popUp {
     display: none;
@@ -103,4 +103,5 @@ div#popUp {
     margin: auto;
     position: absolute;
     top: 0; left: 0; bottom: 0; right: 0;
+    z-index: 5;
 }

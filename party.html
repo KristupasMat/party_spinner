@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title></title>
         <link rel="stylesheet" href="main.css">
-
+        <link rel="stylesheet" href="animate.css">
         <script src="scripts/Winwheel.js"></script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
 
@@ -16,15 +16,19 @@
             <h1>Party Spinner</h1>
         </nav>
 
-        <div align="center">
-            <div id="popUp"></div> 
-            <canvas id="canvas" width="310" height="310">
-            </canvas>
+        <div class="wheelContent" align="center">
+            <div class="wheelPosition">
+                <canvas id="canvas" width="310" height="310">
+                </canvas>
+                <div id="popUp"></div> 
+            </div>
             <div class="power_controls">
                 <img id="spin_button" alt="Spin" onClick="startSpin();" />
                 <br />
             </div>
             <button onClick="newOptions();">newOptions</button>
+
+
         </div>
         <script src="scripts/script.js"></script>
     </body>
