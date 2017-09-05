@@ -3,7 +3,6 @@ html, body, h1 {
     padding: 0;
 }
 
-
 nav#indexNav {
     display: grid;
     height: 5em;
@@ -25,8 +24,115 @@ nav.navigation img {
     bottom: 0;
 }
 h1 {
-    align-self: center; 
+    align-self: center;
 }
+/* loader styling and animating + black screen */
+
+#loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+#loader {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 15vh;
+    height: 15vh;
+    margin: -7.5vh 0 0 -7.5vh; /* vh for responsivity, the other elements of the loader are in px */
+    z-index: 1001; /* so it would go over our already high z-index on black screen */
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #848484;
+    -webkit-animation: spin 2s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+    animation: spin 2s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+
+#loader:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #adadad;
+    -webkit-animation: spin 2.5s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+      animation: spin 2.5s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+
+#loader:after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #e2e2e2;
+    -webkit-animation: spin 1.5s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+      animation: spin 1.5s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+
+@-webkit-keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(0deg);  /* IE 9 */
+        transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+    100% {
+        -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(360deg);  /* IE 9 */
+        transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+}
+@keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(0deg);  /* IE 9 */
+        transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+    100% {
+        -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(360deg);  /* IE 9 */
+        transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+}
+
+#loader-wrapper .loader-section {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #222222;
+    z-index: 1000;
+  }
+
+  /* Loaded added with js after animations */
+.loaded #loader-wrapper .loader-section {
+    -webkit-transform: translateY(-100%);  /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: translateY(-100%);  /* IE 9 */
+    transform: translateY(-100%);  /* Firefox 16+, IE 10+, Opera */
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.loaded #loader {
+    opacity: 0;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.loaded #loader-wrapper {
+    visibility: hidden;
+}
+
 section#intro h3 {
     text-align: center;
     padding-right: 1em ;
@@ -60,13 +166,13 @@ section#choices div img {
 
 section#choices div {
     background-color: yellow;
-    text-align: center; 
+    text-align: center;
 }
 
 /*  Spinner wheel */
 td.the_wheel
 {
-    
+
     background-position: center;
     background-repeat: none;
 }
@@ -77,49 +183,51 @@ h1, p
     margin: 0;
 }
 
-div.power_controls
-{
-    margin-right:70px;
-}
 
 div.html5_logo
 {
     margin-left:70px;
 }
 
-/* Styles for the power selection controls */
-table.power
-{
-    background-color: #cccccc;
-    cursor: pointer;
-    border:1px solid #333333;
+/* Style applied to the spin button */
+.spin {
+  padding: 2% 4%;
+  font-size: 24px;
+  text-align: center;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
 }
 
-table.power th
-{
-    background-color: white;
-    cursor: default;
+.spin:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 
-td.pw1
-{
-    background-color: #6fe8f0;
+/* Style applied to the options button */
+
+.newOptions {
+  padding: 2% 4%;
+  font-size: 20px;
+  text-align: center;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
 }
 
-td.pw2
-{
-    background-color: #86ef6f;
+.newOptions:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 
-td.pw3
-{
-    background-color: #ef6f6f;
-}
-/* Style applied to the spin button once a power has been selected */
-.clickable
-{
-    cursor: pointer;
-}
 /* Other misc styles */
 .margin_bottom
 {
