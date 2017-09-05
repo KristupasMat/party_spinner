@@ -17,41 +17,14 @@
         </nav>
 
         <div align="center">
-            
-            <table cellpadding="0" cellspacing="0" border="0">
-                <tr>
-                    <td>
-                        <div class="power_controls">
-                            <br />
-                            <br />
-                            <table class="power" cellpadding="10" cellspacing="0">
-                                <tr>
-                                    <th align="center">Power</th>
-                                </tr>
-                                <tr>
-                                    <td width="78" align="center" id="pw3" onClick="powerSelected(3);">High</td>
-                                </tr>
-                                <tr>
-                                    <td align="center" id="pw2" onClick="powerSelected(2);">Med</td>
-                                </tr>
-                                <tr>
-                                    <td align="center" id="pw1" onClick="powerSelected(1);">Low</td>
-                                </tr>
-                            </table>
-                            <br />
-                            <img id="spin_button" src="spin_off.png" alt="Spin" onClick="startSpin();">
-                            <br /><br />
-                            &nbsp;&nbsp;<a href="#" onClick="resetWheel(); return false;">Play Again</a><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(reset)
-                        </div>
-                        <button onClick="newOptions();">newOptions</button>
-                    </td>
-                    <td width="438" height="582" class="the_wheel" align="center" valign="center">
-                        <canvas id="canvas" width="434" height="434">
-                            <p style="{color: white}" align="center">Sorry, your browser doesn't support canvas. Please try another</p>
-                        </canvas>
-                    </td>
-                </tr>
-            </table>
+
+            <canvas id="canvas" width="434" height="434">
+            </canvas>
+            <div class="power_controls">
+                <img id="spin_button" src="spin_on.png" alt="Spin" onClick="startSpin();" />
+            </div>
+            <button class="spin" onClick="startSpin();">SPIN</button>
+            <button class="newOptions" onClick="newOptions();">I want something else!</button>
         </div>
 
         <script src="scripts/script.js"></script>
