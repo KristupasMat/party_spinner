@@ -1,32 +1,3 @@
-var theWheel = new Winwheel({
-    'outerRadius'     : 212,        // Set outer radius so wheel fits inside the background.
-    'innerRadius'     : 75,         // Make wheel hollow so segments don't go all way to center.
-    'textFontSize'    : 24,         // Set default font size for the segments.
-    'textOrientation' : 'vertical', // Make text vertial so goes down from the outside of wheel.
-    'textAlignment'   : 'outer',    // Align text to outside of wheel.
-    'numSegments'     : 8,         // Specify number of segments.
-    'segments'        :             // Define segments including colour and text.
-    [                               // font size and test colour overridden on backrupt segments.
-        {'fillStyle' : '#ee1c24', 'text' : 'name1'},
-        {'fillStyle' : '#ee1c24', 'text' : 'name2'},
-        {'fillStyle' : '#3cb878', 'text' : 'name3'},
-        {'fillStyle' : '#f6989d', 'text' : 'name4'},
-        {'fillStyle' : '#00aef0', 'text' : 'name5'},
-        {'fillStyle' : '#f26522', 'text' : 'name6'},
-        {'fillStyle' : '#000000', 'text' : 'name7'},
-        {'fillStyle' : '#e70697', 'text' : 'name8'},
-
-    ],
-    'animation' :           // Specify the animation to use.
-    {
-        'type'     : 'spinToStop',
-        'duration' : 8,     // Duration in seconds.
-        'spins'    : 3,     // Default number of complete spins.
-        'callbackFinished' : 'alertPrize()'
-    }
-});
-
-
 
 // Create new wheel object specifying the parameters at creation time.
 var theWheel = new Winwheel({
@@ -38,14 +9,15 @@ var theWheel = new Winwheel({
     'numSegments'     : 8,         // Specify number of segments.
     'segments'        :             // Define segments including colour and text.
     [                               // font size and test colour overridden on backrupt segments.
-        {'fillStyle' : '#ee1c24', 'text' : 'name1'},
-        {'fillStyle' : '#ee1c24', 'text' : 'name2'},
-        {'fillStyle' : '#3cb878', 'text' : 'name3'},
-        {'fillStyle' : '#f6989d', 'text' : 'name4'},
-        {'fillStyle' : '#00aef0', 'text' : 'name5'},
-        {'fillStyle' : '#f26522', 'text' : 'name6'},
-        {'fillStyle' : '#999999', 'text' : 'name7'},
-        {'fillStyle' : '#e70697', 'text' : 'name8'},
+        {'fillStyle' : '#ee1c24', 'text' : 'name1', 'task' : 'Your task is to burn'},
+        {'fillStyle' : '#ee1c24', 'text' : 'name2', 'task' : 'Your task is to burn'},
+        {'fillStyle' : '#3cb878', 'text' : 'name3', 'task' : 'Your task is to burn'},
+        {'fillStyle' : '#f6989d', 'text' : 'name4', 'task' : 'Your task is to burn'},
+        {'fillStyle' : '#00aef0', 'text' : 'name5', 'task' : 'Your task is to burn'},
+        {'fillStyle' : '#f26522', 'text' : 'name6', 'task' : 'Your task is to burn'},
+        {'fillStyle' : '#999999', 'text' : 'name7', 'task' : 'Your task is to burn'},
+        {'fillStyle' : '#e70697', 'text' : 'name8', 'task' : 'Your task is to burn'},
+
 
     ],
     'animation' :           // Specify the animation to use.
@@ -53,7 +25,7 @@ var theWheel = new Winwheel({
         'type'     : 'spinToStop',
         'duration' : 8,     // Duration in seconds.
         'spins'    : 3,     // Default number of complete spins.
-        'callbackFinished' : 'alertPrize()'
+        'callbackFinished' : 'showPrize()'
     }
 });
 
@@ -95,24 +67,15 @@ function resetWheel()
 // -------------------------------------------------------
 // Called when the spin animation has finished by the callback feature of the wheel because I specified callback in the parameters.
 // -------------------------------------------------------
-function alertPrize()
+function showPrize()
 {
     // Get the segment indicated by the pointer on the wheel background which is at 0 degrees.
     var winningSegment = theWheel.getIndicatedSegment();
 
-    // Just alert to the user what happened.
-    // In a real project probably want to do something more interesting than this with the result.
-    if (winningSegment.text == 'LOOSE TURN')
-    {
-        alert('Sorry but you loose a turn.');
-    }
-    else if (winningSegment.text == 'BANKRUPT')
-    {
-        alert('Oh no, you have gone BANKRUPT!');
-    }
-    else
-    {
-        alert("You have won " + winningSegment.text);
+    if(winningSegment.text){
+        var displayDiv = document.querySelector('div#popUp');
+        displayDiv.style.display = 'block';
+        displayDiv.innerHTML = winningSegment.task;
     }
 }
 

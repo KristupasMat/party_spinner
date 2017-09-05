@@ -1,4 +1,4 @@
-html, body, h1 {
+html, body, h1, p {
     margin: 0;
     padding: 0;
 }
@@ -63,7 +63,7 @@ h1 {
     border: 3px solid transparent;
     border-top-color: #adadad;
     -webkit-animation: spin 2.5s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
-      animation: spin 2.5s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+    animation: spin 2.5s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
 }
 
 #loader:after {
@@ -77,7 +77,7 @@ h1 {
     border: 3px solid transparent;
     border-top-color: #e2e2e2;
     -webkit-animation: spin 1.5s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
-      animation: spin 1.5s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+    animation: spin 1.5s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
 }
 
 @-webkit-keyframes spin {
@@ -112,9 +112,9 @@ h1 {
     height: 100%;
     background: #222222;
     z-index: 1000;
-  }
+}
 
-  /* Loaded added with js after animations */
+/* Loaded added with js after animations */
 .loaded #loader-wrapper .loader-section {
     -webkit-transform: translateY(-100%);  /* Chrome, Opera 15+, Safari 3.1+ */
     -ms-transform: translateY(-100%);  /* IE 9 */
@@ -169,21 +169,6 @@ section#choices div {
     text-align: center;
 }
 
-/*  Spinner wheel */
-td.the_wheel
-{
-
-    background-position: center;
-    background-repeat: none;
-}
-
-/* Do some css reset on selected elements */
-h1, p
-{
-    margin: 0;
-}
-
-
 div.html5_logo
 {
     margin-left:70px;
@@ -191,45 +176,64 @@ div.html5_logo
 
 /* Style applied to the spin button */
 .spin {
-  padding: 2% 4%;
-  font-size: 24px;
-  text-align: center;
-  outline: none;
-  color: #fff;
-  background-color: #4CAF50;
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 9px #999;
+    padding: 2% 4%;
+    font-size: 24px;
+    text-align: center;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
 }
 
 .spin:active {
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
 
 /* Style applied to the options button */
 
 .newOptions {
-  padding: 2% 4%;
-  font-size: 20px;
-  text-align: center;
-  outline: none;
-  color: #fff;
-  background-color: #4CAF50;
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 9px #999;
+    padding: 2% 4%;
+    font-size: 20px;
+    text-align: center;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
 }
 
 .newOptions:active {
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
 
 /* Other misc styles */
 .margin_bottom
 {
     margin-bottom: 5px;
+}
+/* The pop up style changes */
+div.wheelContent {
+    margin-top: 10vh; 
+}
+div.wheelPosition {  
+    position: relative;
+    z-index: 1;
+}
+/* The pop up box */
+div#popUp {
+    display: none;
+    width: 60vw;
+    height: 30vw;
+    background-color: aqua;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    z-index: 5;
 }
