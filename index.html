@@ -5,13 +5,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title></title>
         <link rel="stylesheet" href="main.css">
+        <script src="scripts/Winwheel.js"></script>
     </head>
 
     <body>
        <nav id="indexNav">
             <h1>Party Spinner</h1>
         </nav>
-        <section id="intro"> 
+
+      <!-- loader -->
+        <div id="loader-wrapper">
+          <div id="loader"></div>
+          <!-- black screen while loading -->
+          <div class="loader-section"></div>
+        </div>
+
+        <section id="intro">
             <h2>Hey there, party wolf!</h2>
             <h3>
                 Choose your categories below.
@@ -19,13 +28,13 @@
                 challenges, choose some alcohol or have some
                 story time.
             </h3>
-        </section> 
-        
+        </section>
+
         <section id="choices">
         <div id="party"><img src="images/bottle.png"></div>
         <div id="alcohol"><img src="images/bottle.png"></div>
         <div id="storyTime"><img src="images/bottle.png"></div>
-        <div id="neverEver"><img src="images/bottle.png"></div> 
+        <div id="neverEver"><img src="images/bottle.png"></div>
         </section>
 
         <script src="scripts/script.js"></script>
