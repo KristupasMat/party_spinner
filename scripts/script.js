@@ -102,4 +102,18 @@ function newOptions(){
     }
     theWheel.draw();               // Call draw to render changes to the wheel..
 }
+var bodyLoad = document.querySelector('body');
+var introSec = document.querySelector('section#intro');
+function animateIntro() {
+    introSec.className = 'fadingIn';
+}
+function loadContent() {
+    bodyLoad.className = 'loaded';
+}
+setTimeout(loadContent, 2000);
+setTimeout(animateIntro, 2200);
+
+
+
+
 
