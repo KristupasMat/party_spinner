@@ -207,41 +207,28 @@ div.html5_logo
 }
 
 /* Style applied to the spin button */
-.spin {
+button {
     padding: 2% 4%;
     font-size: 24px;
     text-align: center;
     outline: none;
-    color: #fff;
-    background-color: #4CAF50;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 9px #999;
+    background-color: #FFE272;
+    text-align: center;
+    box-shadow: 5px 5px 20px #363430;
+    border-radius: 12px;
+    outline: none;
 }
 
 .spin:active {
-    background-color: #3e8e41;
-    box-shadow: 0 5px #666;
+    background-color: #BAA553;
+    box-shadow: 0 5px #363430;
     transform: translateY(4px);
 }
 
 /* Style applied to the options button */
-
-.newOptions {
-    padding: 2% 4%;
-    font-size: 20px;
-    text-align: center;
-    outline: none;
-    color: #fff;
-    background-color: #4CAF50;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 9px #999;
-}
-
 .newOptions:active {
-    background-color: #3e8e41;
-    box-shadow: 0 5px #666;
+    background-color: #BAA553;
+    box-shadow: 0 5px 20px #363430;
     transform: translateY(4px);
 }
 
