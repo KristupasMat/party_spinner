@@ -2,12 +2,17 @@ html, body, h1, p {
     margin: 0;
     padding: 0;
 }
+body {
+    background-color: #E3E3E3;
+    font-family: Lucida Grande, sans-serif;
+    color: #266E6C;
 
+}
 nav#indexNav {
     display: grid;
     height: 5em;
     text-align: center;
-    background-color: grey;
+    background-color: #AEB5C2;
 }
 nav.navigation {
     display: grid;
@@ -25,6 +30,10 @@ nav.navigation img {
 }
 h1 {
     align-self: center;
+    font-size: 35px;
+    font-family: 'Pacifico', cursive;
+    text-shadow: 2px 2px 3px black;
+    color: #3FB3B0;
 }
 /* loader styling and animating + black screen */
 
@@ -61,7 +70,7 @@ h1 {
     bottom: 5px;
     border-radius: 50%;
     border: 3px solid transparent;
-    border-top-color: #adadad;
+    border-top-color: #3FB3B0;
     -webkit-animation: spin 2.5s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
     animation: spin 2.5s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
 }
@@ -75,7 +84,7 @@ h1 {
     bottom: 15px;
     border-radius: 50%;
     border: 3px solid transparent;
-    border-top-color: #e2e2e2;
+    border-top-color: #FFE272;
     -webkit-animation: spin 1.5s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
     animation: spin 1.5s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
 }
@@ -152,6 +161,12 @@ section#intro h3 {
     padding-right: 1em ;
     padding-left: 1em ;
 }
+h2 {
+  font-size: 25px;
+}
+h3 {
+  font-size: 15px;
+}
 section#intro {
     display: grid;
     justify-items: center;
@@ -167,6 +182,8 @@ section#choices {
     align-content: center;
     margin-left: 1em;
     margin-right: 1em;
+    padding-top: 1em;
+
 }
 section#choices div {
     display: grid;
@@ -175,12 +192,13 @@ section#choices div {
 section#choices div img {
     width:100px;
     align-self: center;
-
 }
 
 section#choices div {
-    background-color: yellow;
+    background-color: #FFE272;
     text-align: center;
+    box-shadow: 5px 5px 20px #363430;
+    border-radius: 12px;
 }
 
 div.html5_logo
