@@ -9,14 +9,14 @@ var theWheel = new Winwheel({
     'numSegments'     : 8,         // Specify number of segments.
     'segments'        :             // Define segments including colour and text.
     [                               // font size and test colour overridden on backrupt segments.
-        {'fillStyle' : '#ee1c24', 'text' : 'name1', 'task' : 'Your task is to burn'},
-        {'fillStyle' : '#ee1c24', 'text' : 'name2', 'task' : 'Your task is to burn'},
-        {'fillStyle' : '#3cb878', 'text' : 'name3', 'task' : 'Your task is to burn'},
-        {'fillStyle' : '#f6989d', 'text' : 'name4', 'task' : 'Your task is to burn'},
-        {'fillStyle' : '#00aef0', 'text' : 'name5', 'task' : 'Your task is to burn'},
-        {'fillStyle' : '#f26522', 'text' : 'name6', 'task' : 'Your task is to burn'},
-        {'fillStyle' : '#999999', 'text' : 'name7', 'task' : 'Your task is to burn'},
-        {'fillStyle' : '#e70697', 'text' : 'name8', 'task' : 'Your task is to burn'},
+        {'fillStyle' : '#FFE272', 'text' : 'name1', 'task' : 'Your task is to burn'},
+        {'fillStyle' : '#379E9B', 'text' : 'name2', 'task' : 'Your task is to burn'},
+        {'fillStyle' : '#CAD2E0', 'text' : 'name3', 'task' : 'Your task is to burn'},
+        {'fillStyle' : '#246664', 'text' : 'name4', 'task' : 'Your task is to burn'},
+        {'fillStyle' : '#FFE272', 'text' : 'name5', 'task' : 'Your task is to burn'},
+        {'fillStyle' : '#379E9B', 'text' : 'name6', 'task' : 'Your task is to burn'},
+        {'fillStyle' : '#CAD2E0', 'text' : 'name7', 'task' : 'Your task is to burn'},
+        {'fillStyle' : '#246664', 'text' : 'name8', 'task' : 'Your task is to burn'},
 
 
     ],
@@ -112,8 +112,3 @@ function loadContent() {
 }
 setTimeout(loadContent, 2000);
 setTimeout(animateIntro, 2200);
-
-
-
-
-
