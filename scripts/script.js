@@ -29,13 +29,14 @@ var theWheel = new Winwheel({
     }
 });
 
-// Vars used by the code in this page to do power controls.
 var wheelPower    = 0;
 var wheelSpinning = false;
-
-
-
-
+var closePop = document.querySelector('div#popUp img');
+var bodyLoad = document.querySelector('body');
+var introSec = document.querySelector('section#intro');
+var displayDiv = document.querySelector('div#popUp');
+// Get the segment indicated by the pointer on the wheel background which is at 0 degrees.
+var winningSegment = theWheel.getIndicatedSegment();
 // -------------------------------------------------------
 // Click handler for spin button.
 // -------------------------------------------------------
@@ -60,7 +61,6 @@ function resetWheel()
     theWheel.stopAnimation(false);  // Stop the animation, false as param so does not call callback function.
     theWheel.rotationAngle = 0;     // Re-set the wheel angle to 0 degrees.
     theWheel.draw();                // Call draw to render changes to the wheel.
-
     wheelSpinning = false;          // Reset to false to power buttons and spin can be clicked again.
 }
 
@@ -69,27 +69,26 @@ function resetWheel()
 // -------------------------------------------------------
 function showPrize()
 {
-    // Get the segment indicated by the pointer on the wheel background which is at 0 degrees.
-    var winningSegment = theWheel.getIndicatedSegment();
-
     if(winningSegment.text){
-        var displayDiv = document.querySelector('div#popUp');
+        var pHtml = document.querySelector('div#popUp p');
         displayDiv.style.display = 'block';
-        displayDiv.innerHTML = winningSegment.task;
+        displayDiv.className = 'animated zoomIn';
+        pHtml.innerHTML = winningSegment.task;
     }
 }
 
 // Chaning the options, I couldn't find a better solution with my current knowledge of JavaScript.
 function newOptions(){
+    
     if( theWheel.segments[1].text === 'name1' ){
-        theWheel.segments[1].text = 'Example 1';
-        theWheel.segments[2].text = 'Example 2';
-        theWheel.segments[3].text = 'Example 3';
-        theWheel.segments[4].text = 'Example 4';
-        theWheel.segments[5].text = 'Example 5';
-        theWheel.segments[6].text = 'Example 6';
-        theWheel.segments[7].text = 'Example 7';
-        theWheel.segments[8].text = 'Example 8';
+        theWheel.segments[1].text = 'test1';
+        theWheel.segments[2].text = 'test2';
+        theWheel.segments[3].text = 'test3';
+        theWheel.segments[4].text = 'test4';
+        theWheel.segments[5].text = 'test5';
+        theWheel.segments[6].text = 'test6';
+        theWheel.segments[7].text = 'test7';
+        theWheel.segments[8].text = 'test8';
     } else {
         theWheel.segments[1].text = 'name1';
         theWheel.segments[2].text = 'name2';
@@ -102,8 +101,9 @@ function newOptions(){
     }
     theWheel.draw();               // Call draw to render changes to the wheel..
 }
-var bodyLoad = document.querySelector('body');
-var introSec = document.querySelector('section#intro');
+function closePopUp(){
+    displayDiv.style.display = 'none';
+}
 function animateIntro() {
     introSec.className = 'fadingIn';
 }
@@ -112,3 +112,5 @@ function loadContent() {
 }
 setTimeout(loadContent, 2000);
 setTimeout(animateIntro, 2200);
+
+closePop.addEventListener('click', closePopUp, false);

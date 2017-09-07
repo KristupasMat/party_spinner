@@ -211,8 +211,7 @@ div.html5_logo
 .spin {
     display: block;
 }
-button {
-
+button{
     padding: 2% 4%;
     font-size: 24px;
     text-align: center;
@@ -231,20 +230,6 @@ button {
 }
 
 /* Style applied to the options button */
-.newOptions {
-    margin-bottom: 3%;
-    margin-top: 4%;
-    padding: 2% 4%;
-    font-size: 20px;
-    text-align: center;
-    outline: none;
-    color: #fff;
-    background-color: #4CAF50;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 9px #999;
-}
-
 
 .newOptions:active {
     background-color: #BAA553;
@@ -269,9 +254,10 @@ div.wheelPosition {
 div#popUp {
     display: none;
     position: relative;
+    border-radius: 20px;
     width: 60vw;
     height: 30vw;
-    background-color: aqua;
+    background-color: grey;
     margin: auto;
     position: absolute;
     top: 0; left: 0; bottom: 0; right: 0;
@@ -280,7 +266,10 @@ div#popUp {
 div#popUp img {
     z-index: 10;
     width: 25px;
-    top:1%;
-    right:1%;
+    top:4%;
+    right:4%;
     position: absolute;
+}
+div#popUp img:hover {
+     cursor: pointer;
 }
