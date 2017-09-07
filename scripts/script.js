@@ -62,6 +62,10 @@ function startSpin()
         theWheel.startAnimation();
 
     }
+    // Starting a song when startSpin is fired.
+    var audioPlay = document.createElement('audio');
+    audioPlay.src = 'audio/song.mp3';
+    audioPlay.play();
 }
 
 // Function for reset button.
