@@ -9,20 +9,22 @@
         <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
     </head>
     <body>
-          <nav class="navigation">
-              <img src="images/back.png" alt="Go back arrow">
-              <h1>Party Spinner</h1>
-          </nav>
+        <nav class="navigation">
+            <img src="images/back.png" alt="Go back arrow">
+            <h1>Party Spinner</h1>
+        </nav>
 
-          <div class="wheelContent" align="center">
-              <div class="wheelPosition">
-                <canvas id="canvas" width="434" height="434">
-                  </canvas>
-                  <div id="popUp"></div>
-              </div>
-              <button class="spin" onClick="startSpin();">SPIN</button>
-              <button class="newOptions" onClick="newOptions();">I want something else!</button>
-          </div>
+        <div class="wheelContent" align="center">
+            <div class="wheelPosition">
+                <canvas id="canvas" width="310" height="310">
+                </canvas>
+                <div id="popUp">
+                    <img src="images/close.png" alt="close icon">
+                </div>
+            </div>
+            <button class="spin" onClick="startSpin();">SPIN</button>
+            <button class="newOptions" onClick="newOptions();">I want something else!</button>
+        </div>
 
         <script src="scripts/script.js"></script>
     </body>

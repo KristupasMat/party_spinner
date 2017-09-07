@@ -1,7 +1,7 @@
 
 // Create new wheel object specifying the parameters at creation time.
 var theWheel = new Winwheel({
-    'outerRadius'     : 212,        // Set outer radius so wheel fits inside the background.
+    'outerRadius'     : 150,        // Set outer radius so wheel fits inside the background.
     'innerRadius'     : 0,         // Make wheel hollow so segments don't go all way to center.
     'textFontSize'    : 24,         // Set default font size for the segments.
     'textOrientation' : 'vertical', // Make text vertial so goes down from the outside of wheel.
