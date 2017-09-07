@@ -250,7 +250,7 @@ div#popUp {
     display: none;
     width: 60vw;
     height: 30vw;
-    background-color: aqua;
+    background-color: grey;
     margin: auto;
     position: absolute;
     top: 0; left: 0; bottom: 0; right: 0;
