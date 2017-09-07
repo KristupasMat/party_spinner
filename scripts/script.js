@@ -35,6 +35,16 @@ var closePop = document.querySelector('div#popUp img');
 var bodyLoad = document.querySelector('body');
 var introSec = document.querySelector('section#intro');
 var displayDiv = document.querySelector('div#popUp');
+var canvas = document.getElementById('canvas');
+var context = canvas.getContext('2d');
+
+// shadow for the canvas //
+context.shadowColor = '#000';
+context.shadowBlur = 10;
+context.shadowOffsetX = 0;
+context.shadowOffsetY = 0;
+context.fill();
+theWheel.draw();
 // Get the segment indicated by the pointer on the wheel background which is at 0 degrees.
 var winningSegment = theWheel.getIndicatedSegment();
 // -------------------------------------------------------
@@ -52,6 +62,10 @@ function startSpin()
         theWheel.startAnimation();
 
     }
+    // Starting a song when startSpin is fired.
+    var audioPlay = document.createElement('audio');
+    audioPlay.src = 'audio/song.mp3';
+    audioPlay.play();
 }
 
 // Function for reset button.
@@ -79,7 +93,7 @@ function showPrize()
 
 // Chaning the options, I couldn't find a better solution with my current knowledge of JavaScript.
 function newOptions(){
-    
+
     if( theWheel.segments[1].text === 'name1' ){
         theWheel.segments[1].text = 'test1';
         theWheel.segments[2].text = 'test2';
