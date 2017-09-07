@@ -19,7 +19,7 @@ nav.navigation {
     position: relative;
     height: 5em;
     text-align: center;
-    background-color: grey;
+    background-color: #AEB5C2
 }
 nav.navigation img {
     position: absolute;
@@ -221,7 +221,7 @@ button {
 
 .spin:active {
     background-color: #BAA553;
-    box-shadow: 0 5px #363430;
+    box-shadow: 0 5px 20px #363430;
     transform: translateY(4px);
 }
 
