@@ -257,7 +257,8 @@ div#popUp {
     border-radius: 20px;
     width: 70vw;
     height: 30vw;
-    background-color: grey;
+    background-color: #AEB5C2;
+    box-shadow: 2px 2px 10px black;
     margin: auto;
     position: absolute;
     top: 0; left: 0; bottom: 0; right: 0;
