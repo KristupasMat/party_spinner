@@ -221,6 +221,8 @@ button{
     box-shadow: 5px 5px 20px #363430;
     border-radius: 12px;
     outline: none;
+    margin-top: 10px;
+    font-family: Lucida Grande, sans-serif;
 }
 
 .spin:active {
@@ -260,13 +262,16 @@ div#popUp {
     background-color: #AEB5C2;
     box-shadow: 2px 2px 10px black;
     margin: auto;
-    justify-content: center;
-    color: #3FB3B0;
+    text-shadow: 2px 2px 15px black;
+    color: white;
     position: absolute;
     top: 0; left: 0; bottom: 0; right: 0;
     z-index: 5;
 }
 div#popUp p {
+    margin-top: 2em;
+    font-size: 25px;
+    font-weight: bold;
 
 }
 div#popUp img {
