@@ -47,28 +47,32 @@ function startSpin()
     if (wheelSpinning == false)
     {
         //Reset the spinning for the wheel to be fully animated again. Without it, it only moves small degrees.
+        theWheel.stopAnimation(false);
+        theWheel.rotationAngle = 0;
+        theWheel.draw();
         theWheel.rotationAngle = 0;
         theWheel.draw(false);
         // Begin the spin animation by calling startAnimation on the wheel object.
         theWheel.startAnimation();
 
     }
-    // Starting a song when startSpin is fired.
-    var audioPlay = document.createElement('audio');
-    audioPlay.src = 'audio/song.mp3';
-    audioPlay.play();
-}
+    // Starting a song when startSpin is fired.;
+    var songPlaying = document.querySelector('playing');
 
-// Function for reset button.
-// -------------------------------------------------------
-function resetWheel()
-{
-    theWheel.stopAnimation(false);  // Stop the animation, false as param so does not call callback function.
-    theWheel.rotationAngle = 0;     // Re-set the wheel angle to 0 degrees.
-    theWheel.draw();                // Call draw to render changes to the wheel.
-    wheelSpinning = false;          // Reset to false to power buttons and spin can be clicked again.
-}
+    if(songPlaying){
 
+    } else {
+        var audioPlay = document.createElement('audio');
+        document.body.appendChild(audioPlay);
+        audioPlay.id = 'playing';
+        audioPlay.src = 'audio/song.mp3';
+        audioPlay.play();
+        audioPlay.addEventListener('ended', function(){
+            audioPlay.parentNode.removeChild(audioPlay);
+        }, false);
+    }
+
+}
 // -------------------------------------------------------
 // Called when the spin animation has finished by the callback feature of the wheel because I specified callback in the parameters.
 // -------------------------------------------------------
