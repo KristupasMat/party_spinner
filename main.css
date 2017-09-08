@@ -185,16 +185,15 @@ section#choices {
     padding-top: 1em;
 
 }
-section#choices div {
-    display: grid;
-    justify-content: center;
-}
-section#choices div img {
+
+section#choices a img {
     width:100px;
     align-self: center;
 }
 
-section#choices div {
+section#choices a {
+    display: grid;
+    justify-content: center;
     background-color: #FFE272;
     text-align: center;
     box-shadow: 5px 5px 20px #363430;

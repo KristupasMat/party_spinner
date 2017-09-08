@@ -35,16 +35,7 @@ var closePop = document.querySelector('div#popUp img');
 var bodyLoad = document.querySelector('body');
 var introSec = document.querySelector('section#intro');
 var displayDiv = document.querySelector('div#popUp');
-var canvas = document.getElementById('canvas');
-var context = canvas.getContext('2d');
 
-// shadow for the canvas //
-context.shadowColor = '#000';
-context.shadowBlur = 10;
-context.shadowOffsetX = 0;
-context.shadowOffsetY = 0;
-context.fill();
-theWheel.draw();
 // Get the segment indicated by the pointer on the wheel background which is at 0 degrees.
 var winningSegment = theWheel.getIndicatedSegment();
 // -------------------------------------------------------
