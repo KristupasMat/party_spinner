@@ -123,3 +123,8 @@ setTimeout(loadContent, 2000);
 setTimeout(animateIntro, 2200);
 
 closePop.addEventListener('click', closePopUp, false);
+
+//Page transitions//
+window.addEventListener("beforeunload", function () {
+  document.body.classList.add("animate-out");
+});
