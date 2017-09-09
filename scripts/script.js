@@ -1,7 +1,7 @@
 
 // Create new wheel object specifying the parameters at creation time.
 var theWheel = new Winwheel({
-    'outerRadius'     : 212,        // Set outer radius so wheel fits inside the background.
+    'outerRadius'     : 150,        // Set outer radius so wheel fits inside the background.
     'innerRadius'     : 0,         // Make wheel hollow so segments don't go all way to center.
     'textFontSize'    : 24,         // Set default font size for the segments.
     'textOrientation' : 'vertical', // Make text vertial so goes down from the outside of wheel.
@@ -9,85 +9,98 @@ var theWheel = new Winwheel({
     'numSegments'     : 8,         // Specify number of segments.
     'segments'        :             // Define segments including colour and text.
     [                               // font size and test colour overridden on backrupt segments.
-        {'fillStyle' : '#ee1c24', 'text' : 'name1'},
-        {'fillStyle' : '#ee1c24', 'text' : 'name2'},
-        {'fillStyle' : '#3cb878', 'text' : 'name3'},
-        {'fillStyle' : '#f6989d', 'text' : 'name4'},
-        {'fillStyle' : '#00aef0', 'text' : 'name5'},
-        {'fillStyle' : '#f26522', 'text' : 'name6'},
-        {'fillStyle' : '#999999', 'text' : 'name7'},
-        {'fillStyle' : '#e70697', 'text' : 'name8'},
+        {'fillStyle' : '#FFE272', 'text' : 'name1', 'task' : 'Your task is to burn'},
+        {'fillStyle' : '#379E9B', 'text' : 'name2', 'task' : 'Your task is to burn'},
+        {'fillStyle' : '#CAD2E0', 'text' : 'name3', 'task' : 'Your task is to burn'},
+        {'fillStyle' : '#246664', 'text' : 'name4', 'task' : 'Your task is to burn'},
+        {'fillStyle' : '#FFE272', 'text' : 'name5', 'task' : 'Your task is to burn'},
+        {'fillStyle' : '#379E9B', 'text' : 'name6', 'task' : 'Your task is to burn'},
+        {'fillStyle' : '#CAD2E0', 'text' : 'name7', 'task' : 'Your task is to burn'},
+        {'fillStyle' : '#246664', 'text' : 'name8', 'task' : 'Your task is to burn'},
     ],
     'animation' :           // Specify the animation to use.
     {
         'type'     : 'spinToStop',
         'duration' : 8,     // Duration in seconds.
         'spins'    : 3,     // Default number of complete spins.
-        'callbackFinished' : 'alertPrize()'
+        'callbackFinished' : 'showPrize()'
     }
 });
 
-// Vars used by the code in this page to do power controls.
 var wheelPower    = 0;
 var wheelSpinning = false;
+var closePop = document.querySelector('div#popUp img');
+var bodyLoad = document.querySelector('body');
+var introSec = document.querySelector('section#intro');
+var displayDiv = document.querySelector('div#popUp');
 
-------------------------
+<<<<<<< HEAD
+// Get the segment indicated by the pointer on the wheel background which is at 0 degrees.
+var winningSegment = theWheel.getIndicatedSegment();
+
     // Click handler for spin button.
     // -------------------------------------------------------
-    function startSpin()
-{
+    function startSpin() {
     // Ensure that spinning can't be clicked again while already running.
     if (wheelSpinning == false)
     {
         //Reset the spinning for the wheel to be fully animated again. Without it, it only moves small degrees.
+        theWheel.stopAnimation(false);
+        theWheel.rotationAngle = 0;
+        theWheel.draw();
         theWheel.rotationAngle = 0;
         theWheel.draw(false);
         // Begin the spin animation by calling startAnimation on the wheel object.
         theWheel.startAnimation();
 
     }
-}
+    // Starting a song when startSpin is fired.;
+    var songPlaying = document.querySelector('playing');
 
+    if(songPlaying){
+
+    } else {
+        var audioPlay = document.createElement('audio');
+        document.body.appendChild(audioPlay);
+        audioPlay.id = 'playing';
+        audioPlay.src = 'audio/song.mp3';
+        audioPlay.play();
+        audioPlay.addEventListener('ended', function(){
+            audioPlay.parentNode.removeChild(audioPlay);
+        }, false);
+    }
 wheelSpinning = false;          // Reset to false to power buttons and spin can be clicked again.
 }
 
+
+}
 // -------------------------------------------------------
 // Called when the spin animation has finished by the callback feature of the wheel because I specified callback in the parameters.
 // -------------------------------------------------------
-function alertPrize()
+function showPrize()
 {
-    // Get the segment indicated by the pointer on the wheel background which is at 0 degrees.
-    var winningSegment = theWheel.getIndicatedSegment();
-
-    // Just alert to the user what happened.
-    // In a real project probably want to do something more interesting than this with the result.
-    if (winningSegment.text == 'LOOSE TURN')
-    {
-        alert('Sorry but you loose a turn.');
-    }
-    else if (winningSegment.text == 'BANKRUPT')
-    {
-        alert('Oh no, you have gone BANKRUPT!');
-    }
-    else
-    {
-        alert("You have won " + winningSegment.text);
+    if(winningSegment.text){
+        var pHtml = document.querySelector('div#popUp p');
+        displayDiv.style.display = 'block';
+        displayDiv.className = 'animated zoomIn';
+        pHtml.innerHTML = winningSegment.task;
     }
 }
 
 // Chaning the options, I couldn't find a better solution with my current knowledge of JavaScript.
 function newOptions(){
+
     if( theWheel.segments[1].text === 'name1' ){
-        theWheel.segments[1].text = 'Example 1';
-        theWheel.segments[2].text = 'Example 2';
-        theWheel.segments[3].text = 'Example 3';
-        theWheel.segments[4].text = 'Example 4';
-        theWheel.segments[5].text = 'Example 5';
-        theWheel.segments[6].text = 'Example 6';
-        theWheel.segments[7].text = 'Example 7';
-        theWheel.segments[8].text = 'Example 8';
-    } 
-    else {
+<<<<<<< HEAD
+        theWheel.segments[1].text = 'test1';
+        theWheel.segments[2].text = 'test2';
+        theWheel.segments[3].text = 'test3';
+        theWheel.segments[4].text = 'test4';
+        theWheel.segments[5].text = 'test5';
+        theWheel.segments[6].text = 'test6';
+        theWheel.segments[7].text = 'test7';
+        theWheel.segments[8].text = 'test8';
+    } else {
         theWheel.segments[1].text = 'name1';
         theWheel.segments[2].text = 'name2';
         theWheel.segments[3].text = 'name3';
@@ -99,4 +112,21 @@ function newOptions(){
     }
     theWheel.draw();               // Call draw to render changes to the wheel..
 }
+function closePopUp(){
+    displayDiv.style.display = 'none';
+}
+function animateIntro() {
+    introSec.className = 'fadingIn';
+}
+function loadContent() {
+    bodyLoad.className = 'loaded';
+}
+setTimeout(loadContent, 2000);
+setTimeout(animateIntro, 2200);
 
+closePop.addEventListener('click', closePopUp, false);
+
+//Page transitions//
+window.addEventListener("beforeunload", function () {
+  document.body.classList.add("animate-out");
+});
