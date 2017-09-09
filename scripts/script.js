@@ -17,8 +17,6 @@ var theWheel = new Winwheel({
         {'fillStyle' : '#379E9B', 'text' : 'name6', 'task' : 'Your task is to burn'},
         {'fillStyle' : '#CAD2E0', 'text' : 'name7', 'task' : 'Your task is to burn'},
         {'fillStyle' : '#246664', 'text' : 'name8', 'task' : 'Your task is to burn'},
-
-
     ],
     'animation' :           // Specify the animation to use.
     {
@@ -36,13 +34,13 @@ var bodyLoad = document.querySelector('body');
 var introSec = document.querySelector('section#intro');
 var displayDiv = document.querySelector('div#popUp');
 
+<<<<<<< HEAD
 // Get the segment indicated by the pointer on the wheel background which is at 0 degrees.
 var winningSegment = theWheel.getIndicatedSegment();
-// -------------------------------------------------------
-// Click handler for spin button.
-// -------------------------------------------------------
-function startSpin()
-{
+
+    // Click handler for spin button.
+    // -------------------------------------------------------
+    function startSpin() {
     // Ensure that spinning can't be clicked again while already running.
     if (wheelSpinning == false)
     {
@@ -71,6 +69,9 @@ function startSpin()
             audioPlay.parentNode.removeChild(audioPlay);
         }, false);
     }
+wheelSpinning = false;          // Reset to false to power buttons and spin can be clicked again.
+}
+
 
 }
 // -------------------------------------------------------
@@ -90,6 +91,7 @@ function showPrize()
 function newOptions(){
 
     if( theWheel.segments[1].text === 'name1' ){
+<<<<<<< HEAD
         theWheel.segments[1].text = 'test1';
         theWheel.segments[2].text = 'test2';
         theWheel.segments[3].text = 'test3';
