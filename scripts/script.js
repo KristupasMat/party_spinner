@@ -33,14 +33,15 @@ var closePop = document.querySelector('div#popUp img');
 var bodyLoad = document.querySelector('body');
 var introSec = document.querySelector('section#intro');
 var displayDiv = document.querySelector('div#popUp');
-
-<<<<<<< HEAD
+var overlay = document.querySelector('div#cover');
+var spinBut = document.querySelector('button.spin');
+var newOpt = document.querySelector('button.newOptions');
 // Get the segment indicated by the pointer on the wheel background which is at 0 degrees.
 var winningSegment = theWheel.getIndicatedSegment();
 
-    // Click handler for spin button.
-    // -------------------------------------------------------
-    function startSpin() {
+// Click handler for spin button.
+// -------------------------------------------------------
+function startSpin() {
     // Ensure that spinning can't be clicked again while already running.
     if (wheelSpinning == false)
     {
@@ -69,10 +70,14 @@ var winningSegment = theWheel.getIndicatedSegment();
             audioPlay.parentNode.removeChild(audioPlay);
         }, false);
     }
-wheelSpinning = false;          // Reset to false to power buttons and spin can be clicked again.
-}
-
-
+    wheelSpinning = false;          // Reset to false to power buttons and spin can be clicked again.
+    // Removing the event listener and activating it again, when the pop up is closed, so while spinning it would not be possible to interfer. It solves the sound problem as well.
+    spinBut.removeEventListener('click', startSpin, false);
+    newOpt.removeEventListener('click', newOptions, false);
+    // Changing the cursor and chaning spin to spinning, slightly improves UX.
+    spinBut.style.cursor = 'not-allowed';
+    newOpt.style.cursor = 'not-allowed';
+    spinBut.innerHTML = 'SPINNING!';
 }
 // -------------------------------------------------------
 // Called when the spin animation has finished by the callback feature of the wheel because I specified callback in the parameters.
@@ -81,6 +86,7 @@ function showPrize()
 {
     if(winningSegment.text){
         var pHtml = document.querySelector('div#popUp p');
+        overlay.style.display = 'block';
         displayDiv.style.display = 'block';
         displayDiv.className = 'animated zoomIn';
         pHtml.innerHTML = winningSegment.task;
@@ -91,7 +97,6 @@ function showPrize()
 function newOptions(){
 
     if( theWheel.segments[1].text === 'name1' ){
-<<<<<<< HEAD
         theWheel.segments[1].text = 'test1';
         theWheel.segments[2].text = 'test2';
         theWheel.segments[3].text = 'test3';
@@ -113,7 +118,14 @@ function newOptions(){
     theWheel.draw();               // Call draw to render changes to the wheel..
 }
 function closePopUp(){
+    // putting back the styles and event listeners.
     displayDiv.style.display = 'none';
+    overlay.style.display = 'none';
+    spinBut.addEventListener('click', startSpin, false);
+    newOpt.addEventListener('click', newOptions, false);
+    spinBut.style.cursor = 'pointer';
+    newOpt.style.cursor = 'pointer';
+    spinBut.innerHTML = 'SPIN';
 }
 function animateIntro() {
     introSec.className = 'fadingIn';
@@ -124,9 +136,11 @@ function loadContent() {
 setTimeout(loadContent, 2000);
 setTimeout(animateIntro, 2200);
 
+spinBut.addEventListener('click', startSpin, false);
+newOpt.addEventListener('click', newOptions, false);
 closePop.addEventListener('click', closePopUp, false);
 
 //Page transitions//
 window.addEventListener("beforeunload", function () {
-  document.body.classList.add("animate-out");
+    document.body.classList.add("animate-out");
 });

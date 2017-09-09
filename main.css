@@ -162,10 +162,10 @@ section#intro h3 {
     padding-left: 1em ;
 }
 h2 {
-  font-size: 25px;
+    font-size: 25px;
 }
 h3 {
-  font-size: 15px;
+    font-size: 15px;
 }
 section#intro {
     display: grid;
@@ -222,7 +222,9 @@ button{
     margin-top: 10px;
     font-family: Lucida Grande, sans-serif;
 }
-
+button:hover{
+    cursor: pointer;
+}
 .spin:active {
     background-color: #BAA553;
     box-shadow: 0 5px 20px #363430;
@@ -236,72 +238,10 @@ button{
     box-shadow: 0 5px 20px #363430;
     transform: translateY(4px);
 }
-
-<<<<<<< HEAD
 section#choices div {
     background-color: yellow;
     text-align: center; 
 }
-
-/*  Spinner wheel */
-td.the_wheel
-{
-    
-    background-position: center;
-    background-repeat: none;
-}
-
-/* Do some css reset on selected elements */
-h1, p
-{
-    margin: 0;
-}
-
-div.power_controls
-{
-    margin-right:70px;
-}
-
-div.html5_logo
-{
-    margin-left:70px;
-}
-
-/* Styles for the power selection controls */
-table.power
-{
-    background-color: #cccccc;
-    cursor: pointer;
-    border:1px solid #333333;
-}
-
-table.power th
-{
-    background-color: white;
-    cursor: default;
-}
-
-td.pw1
-{
-    background-color: #6fe8f0;
-}
-
-td.pw2
-{
-    background-color: #86ef6f;
-}
-
-td.pw3
-{
-    background-color: #ef6f6f;
-}
-/* Style applied to the spin button once a power has been selected */
-.clickable
-{
-    cursor: pointer;
-}
-=======
->>>>>>> wheel_js
 /* Other misc styles */
 .margin_bottom
 {
@@ -320,8 +260,8 @@ div#popUp {
     display: none;
     position: relative;
     border-radius: 20px;
-    width: 70vw;
-    height: 30vw;
+    width: 300px;
+    height: 20vh;
     background-color: #AEB5C2;
     box-shadow: 2px 2px 10px black;
     margin: auto;
@@ -329,25 +269,40 @@ div#popUp {
     color: white;
     position: absolute;
     top: 0; left: 0; bottom: 0; right: 0;
-    z-index: 5;
+    z-index: 10;
+}
+@media screen and (max-width:375px){
+    div#popUp {
+        width: 80vw;
+        height: 20vh;
+    }
 }
 div#popUp p {
     margin-top: 2em;
     font-size: 25px;
     font-weight: bold;
-
 }
 div#popUp img {
-    z-index: 10;
+    z-index: 15;
     width: 25px;
     top:4%;
     right:4%;
     position: absolute;
 }
 div#popUp img:hover {
-     cursor: pointer;
+    cursor: pointer;
 }
-
+/* Cover overlay */
+#cover{
+    position:fixed;
+    top:0;
+    left:0;
+    background:rgba(0,0,0,0.6);
+    z-index:5;
+    width:100%;
+    height:100%;
+    display:none;
+}
 /* Page transistions */
 .animate-in {
     -webkit-animation: fadeIn .5s ease-in;
