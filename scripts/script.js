@@ -36,8 +36,6 @@ var displayDiv = document.querySelector('div#popUp');
 var overlay = document.querySelector('div#cover');
 var spinBut = document.querySelector('button.spin');
 var newOpt = document.querySelector('button.newOptions');
-// Get the segment indicated by the pointer on the wheel background which is at 0 degrees.
-var winningSegment = theWheel.getIndicatedSegment();
 
 // Click handler for spin button.
 // -------------------------------------------------------
@@ -69,8 +67,8 @@ function startSpin() {
         audioPlay.addEventListener('ended', function(){
             audioPlay.parentNode.removeChild(audioPlay);
         }, false);
-    }
-    wheelSpinning = false;          // Reset to false to power buttons and spin can be clicked again.
+    } 
+    // Reset to false to power buttons and spin can be clicked again.
     // Removing the event listener and activating it again, when the pop up is closed, so while spinning it would not be possible to interfer. It solves the sound problem as well.
     spinBut.removeEventListener('click', startSpin, false);
     newOpt.removeEventListener('click', newOptions, false);
@@ -84,13 +82,14 @@ function startSpin() {
 // -------------------------------------------------------
 function showPrize()
 {
-    if(winningSegment.text){
-        var pHtml = document.querySelector('div#popUp p');
-        overlay.style.display = 'block';
-        displayDiv.style.display = 'block';
-        displayDiv.className = 'animated zoomIn';
-        pHtml.innerHTML = winningSegment.task;
-    }
+    // Get the segment indicated by the pointer on the wheel background which is at 0 degrees.
+    var winningSegment = theWheel.getIndicatedSegment();
+    var pHtml = document.querySelector('div#popUp p');
+    overlay.style.display = 'block';
+    displayDiv.style.display = 'block';
+    displayDiv.className = 'animated zoomIn';
+    pHtml.innerHTML = winningSegment.task;
+    wheelSpinning = false;
 }
 
 // Chaning the options, I couldn't find a better solution with my current knowledge of JavaScript.
