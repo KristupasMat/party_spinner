@@ -9,14 +9,14 @@ var theWheel = new Winwheel({
     'numSegments'     : 8,         // Specify number of segments.
     'segments'        :             // Define segments including colour and text.
     [                               // font size and test colour overridden on backrupt segments.
-        {'fillStyle' : '#FFE272', 'text' : 'name1', 'task' : 'Your task is to burn'},
-        {'fillStyle' : '#379E9B', 'text' : 'name2', 'task' : 'Your task is to burn'},
-        {'fillStyle' : '#CAD2E0', 'text' : 'name3', 'task' : 'Your task is to burn'},
-        {'fillStyle' : '#246664', 'text' : 'name4', 'task' : 'Your task is to burn'},
-        {'fillStyle' : '#FFE272', 'text' : 'name5', 'task' : 'Your task is to burn'},
-        {'fillStyle' : '#379E9B', 'text' : 'name6', 'task' : 'Your task is to burn'},
-        {'fillStyle' : '#CAD2E0', 'text' : 'name7', 'task' : 'Your task is to burn'},
-        {'fillStyle' : '#246664', 'text' : 'name8', 'task' : 'Your task is to burn'},
+        {'fillStyle' : '#FFE272', 'text' : 'TRUTH', 'task' : 'Have you ever had sex in your parent\'s\ bed?'},
+        {'fillStyle' : '#379E9B', 'text' : 'DARE', 'task' : 'Take a shot'},
+        {'fillStyle' : '#CAD2E0', 'text' : 'TRUTH', 'task' : 'Where you ever drunk?'},
+        {'fillStyle' : '#246664', 'text' : 'DARE', 'task' : 'Do 100 push-ups'},
+        {'fillStyle' : '#FFE272', 'text' : 'TRUTH', 'task' : 'Worst childhood memory?'},
+        {'fillStyle' : '#379E9B', 'text' : 'DARE', 'task' : 'Make a prank call'},
+        {'fillStyle' : '#CAD2E0', 'text' : 'TRUTH', 'task' : 'Biggest life regrets?'},
+        {'fillStyle' : '#246664', 'text' : 'DARE', 'task' : 'Mix every alcohol into drink'},
     ],
     'animation' :           // Specify the animation to use.
     {
