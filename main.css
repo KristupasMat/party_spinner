@@ -240,20 +240,30 @@ button:hover{
 }
 section#choices div {
     background-color: yellow;
-    text-align: center; 
+    text-align: center;
 }
 /* Other misc styles */
 .margin_bottom
 {
     margin-bottom: 5px;
 }
+
 /* The pop up style changes */
 div.wheelContent {
     margin-top: 10vh;
+
+
 }
+
 div.wheelPosition {
     position: relative;
     z-index: 1;
+    background-image: url(images/wheel_back.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-bottom: 4em;
+
+
 }
 /* The pop up box */
 div#popUp {
